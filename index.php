@@ -1,10 +1,18 @@
+<?php session_start();
+
+// PHP null coalescing operator ?? (PHP 7.0+)
+$user = $_SESSION['username'] ?? "Guest";
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
         <title></title>
     </head>
     <body>
+        Welcome, <?= $user ?>
+        <p />
+        
         <form action="authenticate.php" method="POST">
             Username: <input type="text" name="user"><br>
             Password: <input type="password" name="pwd"><br>
